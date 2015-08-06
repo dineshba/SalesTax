@@ -1,0 +1,16 @@
+Description:
+============
+Sales Tax Calculation System.
+SETUP:
+============
+Install IntelliJ IDEA 14 UE
+Install ant 1.9.5
+Download junit.4.11.jar
+
+BUILD:
+============
+    Run the command "ant compile" from Project Directory in the terminal.
+
+RUN:
+============
+    Run the command "ant" from Project Directory in the terminal.
