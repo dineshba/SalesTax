@@ -1,11 +1,11 @@
 package com.salesTax;
 
-import junit.framework.Assert;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+
 
 public class SalesTaxTest {
 
@@ -34,9 +34,9 @@ public class SalesTaxTest {
     public void salesTaxIsFivePercentageForImportedGoods() {
         SalesTax salesTax = new SalesTax();
 
-        salesTax.calculate("imported 10");
+        salesTax.calculate("imported book 10");
 
-        assertEquals("Total = 10.5", salesTax.toString());
+        assertEquals("Sales Taxes = 0.5\nTotal = 10.5", salesTax.toString());
     }
 
     @Test
@@ -45,7 +45,7 @@ public class SalesTaxTest {
 
         salesTax.calculate("perfume 10");
 
-        assertEquals("Total = 11.0", salesTax.toString());
+        assertEquals("Sales Taxes = 1.0\nTotal = 11.0", salesTax.toString());
     }
 
     @Test
@@ -54,7 +54,7 @@ public class SalesTaxTest {
 
         salesTax.calculate("book dsd 10");
 
-        assertEquals("Total = 10.0", salesTax.toString());
+        assertEquals("Sales Taxes = 0.0\nTotal = 10.0", salesTax.toString());
     }
 
     @Test
@@ -63,6 +63,6 @@ public class SalesTaxTest {
 
         salesTax.calculate("1 imported perfume is at 10");
 
-        assertEquals("Total = 11.55", salesTax.toString());
+        assertEquals("Sales Taxes = 1.5500000000000007\nTotal = 11.55", salesTax.toString());
     }
 }

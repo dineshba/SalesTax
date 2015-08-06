@@ -22,10 +22,12 @@ public class SalesTax {
 
         if (count != 1)
             total *= 1.1;
+        salesTax = total - getPrice(input);
 
         for (String string : strings) {
             if (string.equals("imported")) {
                 total *= 1.05;
+                salesTax = total - getPrice(input);
                 return true;
             }
         }
@@ -40,6 +42,6 @@ public class SalesTax {
 
     @Override
     public String toString() {
-        return "Total = " + total;
+        return "Sales Taxes = " + salesTax + "\nTotal = " + total ;
     }
 }
