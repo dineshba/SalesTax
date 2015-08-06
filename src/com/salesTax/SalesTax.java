@@ -13,4 +13,10 @@ public class SalesTax {
         }
         return false;
     }
+
+    public double getPrice(String input) {
+        String[] strings = input.split(" ");
+        int length = strings.length;
+        return Double.parseDouble(strings[length-1]);
+    }
 }
