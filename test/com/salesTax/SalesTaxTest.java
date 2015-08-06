@@ -1,5 +1,6 @@
 package com.salesTax;
 
+import junit.framework.Assert;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertTrue;
@@ -27,5 +28,14 @@ public class SalesTaxTest {
         SalesTax salesTax = new SalesTax();
 
         assertEquals(1.24, salesTax.getPrice("1 book at 1.24 "), 0.01);
+    }
+
+    @Test
+    public void salesTaxIsFivePercentageForImportedGoods() {
+        SalesTax salesTax = new SalesTax();
+
+        salesTax.calculate("imported 10");
+
+        assertEquals("Total = 10.5", salesTax.toString());
     }
 }
