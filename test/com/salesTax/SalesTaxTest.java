@@ -38,4 +38,13 @@ public class SalesTaxTest {
 
         assertEquals("Total = 10.5", salesTax.toString());
     }
+
+    @Test
+    public void salesTaxIsTenPercentageForNonImportedGoodsOtherThanBookFoodMedicine() {
+        SalesTax salesTax = new SalesTax();
+
+        salesTax.calculate("perfume 10");
+
+        assertEquals("Total = 11.0", salesTax.toString());
+    }
 }

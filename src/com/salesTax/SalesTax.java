@@ -12,6 +12,9 @@ public class SalesTax {
         String[] strings = input.split(" ");
         int length = strings.length;
 
+        total = getPrice(this.input);
+        total *= 1.1;
+
         for (String string : strings) {
             if (string.equals("imported")) {
                 total = getPrice(this.input);
