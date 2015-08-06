@@ -13,14 +13,14 @@ public class SalesTaxTest {
     public void shouldReturnFalseWhenThereIsNoImportWordInInput() {
         SalesTax salesTax = new SalesTax();
 
-        assertFalse(salesTax.calculate(" "));
+        assertFalse(salesTax.calculate(" 0"));
     }
 
     @Test
     public void shouldReturnTrueWhenThereIsNoImportWordInInput() {
         SalesTax salesTax = new SalesTax();
 
-        assertTrue(salesTax.calculate("1 box of imported cups"));
+        assertTrue(salesTax.calculate("1 box of imported cups at 10"));
     }
 
     @Test
@@ -46,5 +46,14 @@ public class SalesTaxTest {
         salesTax.calculate("perfume 10");
 
         assertEquals("Total = 11.0", salesTax.toString());
+    }
+
+    @Test
+    public void salesTaxIsZeroPercentageForNonImportedBookFoodMedicine() {
+        SalesTax salesTax = new SalesTax();
+
+        salesTax.calculate("book dsd 10");
+
+        assertEquals("Total = 10.0", salesTax.toString());
     }
 }
